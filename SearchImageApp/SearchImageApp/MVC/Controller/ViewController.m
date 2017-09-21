@@ -25,6 +25,7 @@
     //Set default for variables
     [self setDefaultForVariables];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
@@ -43,7 +44,6 @@
         [listInputText addObject:item];
     }
 }
-
 
 #pragma mark: - UITableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -71,4 +71,5 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
 @end

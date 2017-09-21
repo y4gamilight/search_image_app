@@ -229,3 +229,41 @@ SearchImageApp/Pods/Target Support Files/Pods-SearchImageApp/Pods-SearchImageApp
 SearchImageApp/Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m
 SearchImageApp/Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch
 SearchImageApp/Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONAPI.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONHTTPClient.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONKeyMapper.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONModel+networking.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONModel.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONModelClassProperty.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONModelError.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONModelLib.h
+SearchImageApp/Pods/Headers/Private/JSONModel/JSONValueTransformer.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONAPI.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONHTTPClient.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONKeyMapper.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONModel+networking.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONModel.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONModelClassProperty.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONModelError.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONModelLib.h
+SearchImageApp/Pods/Headers/Public/JSONModel/JSONValueTransformer.h
+SearchImageApp/Pods/JSONModel/LICENSE
+SearchImageApp/Pods/JSONModel/README.md
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelLib.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModel/JSONModel.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModel/JSONModel.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModel/JSONModelClassProperty.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModel/JSONModelClassProperty.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModel/JSONModelError.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModel/JSONModelError.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONAPI.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONAPI.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONHTTPClient.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONModel+networking.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelNetworking/JSONModel+networking.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONKeyMapper.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONKeyMapper.m
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.h
+SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.m
+SearchImageApp/Pods/Target Support Files/JSONModel/JSONModel-dummy.m

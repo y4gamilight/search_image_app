@@ -11,4 +11,5 @@
 
 #define MAX_LINES_IN_TABLE                      5
 
+#define DEVELOP                                 1
 #endif /* Constants_h */

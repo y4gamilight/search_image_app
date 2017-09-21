@@ -9,4 +9,5 @@ target 'SearchImageApp' do
 	pod 'AFNetworking', '~> 3.0'
 	pod 'SDWebImage', '~> 4.0'
 	pod 'MBProgressHUD', '~> 1.0.0'
+    pod 'JSONModel'
 end

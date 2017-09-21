@@ -8,6 +8,21 @@
 
 #ifndef SearchImageApp_prefix_h
 #define SearchImageApp_prefix_h
+
+
+// Frameworks
+#import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
+#import <JSONModel/JSONModel.h>
+#import "CheckNetwork.h"
+
+//Constants
 #import "Constants.h"
+#import "ConstantsAPI.h"
+#import "ConstantsApp.h"
+
+//Class header
+#import "GlobalMethods.h"
 
 #endif /* SearchImageApp_prefix_h */
