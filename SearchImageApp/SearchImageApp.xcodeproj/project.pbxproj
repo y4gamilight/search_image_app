@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9344CBDFC06008E773083CB9 /* libPods-SearchImageApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 803CAA21D91351AC7E544ACA /* libPods-SearchImageApp.a */; };
+		B00420C71F73D67C0016FCB1 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B00420C61F73D67C0016FCB1 /* Item.m */; };
+		B00420CA1F73D6AD0016FCB1 /* API.m in Sources */ = {isa = PBXBuildFile; fileRef = B00420C91F73D6AD0016FCB1 /* API.m */; };
+		B00420CE1F73D7240016FCB1 /* CheckNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B00420CD1F73D7240016FCB1 /* CheckNetwork.m */; };
 		B00FA4001F72BB7B003BEA95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA3FF1F72BB7B003BEA95 /* main.m */; };
 		B00FA4031F72BB7B003BEA95 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA4021F72BB7B003BEA95 /* AppDelegate.m */; };
 		B00FA4091F72BB7B003BEA95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00FA4071F72BB7B003BEA95 /* Main.storyboard */; };
@@ -15,12 +18,17 @@
 		B00FA40E1F72BB7B003BEA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00FA40C1F72BB7B003BEA95 /* LaunchScreen.storyboard */; };
 		B00FA41B1F72BDB7003BEA95 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA4181F72BDB7003BEA95 /* ViewController.m */; };
 		B00FA41E1F72BE03003BEA95 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA41D1F72BE03003BEA95 /* CustomCell.m */; };
-		B00FA4211F72CA31003BEA95 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA4201F72CA31003BEA95 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6E4C86669C3481137E1180AB /* Pods-SearchImageApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchImageApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SearchImageApp/Pods-SearchImageApp.debug.xcconfig"; sourceTree = "<group>"; };
 		803CAA21D91351AC7E544ACA /* libPods-SearchImageApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SearchImageApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00420C51F73D67C0016FCB1 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		B00420C61F73D67C0016FCB1 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		B00420C81F73D6AD0016FCB1 /* API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = API.h; sourceTree = "<group>"; };
+		B00420C91F73D6AD0016FCB1 /* API.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = API.m; sourceTree = "<group>"; };
+		B00420CC1F73D7240016FCB1 /* CheckNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckNetwork.h; sourceTree = "<group>"; };
+		B00420CD1F73D7240016FCB1 /* CheckNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckNetwork.m; sourceTree = "<group>"; };
 		B00FA3FB1F72BB7B003BEA95 /* SearchImageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchImageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00FA3FF1F72BB7B003BEA95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B00FA4011F72BB7B003BEA95 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,8 +41,6 @@
 		B00FA4181F72BDB7003BEA95 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B00FA41C1F72BE03003BEA95 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		B00FA41D1F72BE03003BEA95 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
-		B00FA41F1F72CA31003BEA95 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		B00FA4201F72CA31003BEA95 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		B00FA4231F72CDB0003BEA95 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B00FA4241F72CDE9003BEA95 /* SearchImageApp-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchImageApp-prefix.pch"; sourceTree = "<group>"; };
 		BD12FAB0AB044A21EB2353BB /* Pods-SearchImageApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchImageApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SearchImageApp/Pods-SearchImageApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +75,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B00420C31F73D67C0016FCB1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B00420C81F73D6AD0016FCB1 /* API.h */,
+				B00420C91F73D6AD0016FCB1 /* API.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B00420C41F73D67C0016FCB1 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B00420C51F73D67C0016FCB1 /* Item.h */,
+				B00420C61F73D67C0016FCB1 /* Item.m */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B00420CB1F73D7170016FCB1 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B00420CC1F73D7240016FCB1 /* CheckNetwork.h */,
+				B00420CD1F73D7240016FCB1 /* CheckNetwork.m */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		B00FA3F21F72BB7B003BEA95 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +123,7 @@
 		B00FA3FD1F72BB7B003BEA95 /* SearchImageApp */ = {
 			isa = PBXGroup;
 			children = (
+				B00420CB1F73D7170016FCB1 /* Libraries */,
 				B00FA4221F72CD9C003BEA95 /* Extensions */,
 				B00FA4151F72BDB7003BEA95 /* MVC */,
 				B00FA4011F72BB7B003BEA95 /* AppDelegate.h */,
@@ -134,8 +168,8 @@
 		B00FA4191F72BDB7003BEA95 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B00FA41F1F72CA31003BEA95 /* Item.h */,
-				B00FA4201F72CA31003BEA95 /* Item.m */,
+				B00420C31F73D67C0016FCB1 /* API */,
+				B00420C41F73D67C0016FCB1 /* Objects */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,10 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B00FA4211F72CA31003BEA95 /* Item.m in Sources */,
+				B00420CA1F73D6AD0016FCB1 /* API.m in Sources */,
+				B00420C71F73D67C0016FCB1 /* Item.m in Sources */,
 				B00FA41B1F72BDB7003BEA95 /* ViewController.m in Sources */,
 				B00FA4031F72BB7B003BEA95 /* AppDelegate.m in Sources */,
 				B00FA41E1F72BE03003BEA95 /* CustomCell.m in Sources */,
+				B00420CE1F73D7240016FCB1 /* CheckNetwork.m in Sources */,
 				B00FA4001F72BB7B003BEA95 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +492,7 @@
 				B00FA4141F72BB7B003BEA95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
