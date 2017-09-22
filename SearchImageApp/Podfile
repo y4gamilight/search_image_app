@@ -7,7 +7,8 @@ target 'SearchImageApp' do
 	platform :ios, '8.0'
   # Pods for SearchImageApp
 	pod 'AFNetworking', '~> 3.0'
-	pod 'SDWebImage', '~> 4.0'
+	pod 'SDWebImage', '~> 3.7.0'
 	pod 'MBProgressHUD', '~> 1.0.0'
     pod 'JSONModel'
+    pod 'DACircularProgress', '~> 2.3'
 end

@@ -11,4 +11,5 @@
 @interface Item : NSObject <NSCoding>
 @property (nonatomic, strong) NSString  *textInput;
 @property (nonatomic, strong) NSString  *urlImage;
+@property (nonatomic, strong) UIImage  *image;
 @end

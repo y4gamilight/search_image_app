@@ -267,3 +267,16 @@ SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONKeyMapper.m
 SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.h
 SearchImageApp/Pods/JSONModel/JSONModel/JSONModelTransformations/JSONValueTransformer.m
 SearchImageApp/Pods/Target Support Files/JSONModel/JSONModel-dummy.m
+SearchImageApp/Pods/DACircularProgress/LICENSE.md
+SearchImageApp/Pods/DACircularProgress/README.md
+SearchImageApp/Pods/DACircularProgress/DACircularProgress/DACircularProgressView.h
+SearchImageApp/Pods/DACircularProgress/DACircularProgress/DACircularProgressView.m
+SearchImageApp/Pods/DACircularProgress/DACircularProgress/DALabeledCircularProgressView.h
+SearchImageApp/Pods/DACircularProgress/DACircularProgress/DALabeledCircularProgressView.m
+SearchImageApp/Pods/Headers/Private/DACircularProgress/DACircularProgressView.h
+SearchImageApp/Pods/Headers/Private/DACircularProgress/DALabeledCircularProgressView.h
+SearchImageApp/Pods/Headers/Public/DACircularProgress/DACircularProgressView.h
+SearchImageApp/Pods/Headers/Public/DACircularProgress/DALabeledCircularProgressView.h
+SearchImageApp/Pods/Target Support Files/DACircularProgress/DACircularProgress-dummy.m
+SearchImageApp/Pods/Target Support Files/DACircularProgress/DACircularProgress-prefix.pch
+SearchImageApp/Pods/Target Support Files/DACircularProgress/DACircularProgress.xcconfig

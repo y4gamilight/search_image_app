@@ -10,8 +10,9 @@
 #import "SearchImageAPI.h"
 #import "ResultObj.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+CircularProgressView.h"
 
-@interface CustomCell() <UITextFieldDelegate>
+@interface CustomCell() <UITextFieldDelegate,ProgressViewDataSource>
 
 @end
 
@@ -71,7 +72,12 @@
 }
 
 - (void)editingChangedOnTextField:(id)sender {
-    [self callAPIGetImageFirstWithKeyWord];
+    if(self.mTextFieldInput.text.length > 0) {
+        [self callAPIGetImageFirstWithKeyWord];
+    } else {
+        self.mImageResult.image = IMAGE_DEFAULT;
+    }
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -80,25 +86,58 @@
 }
 
 - (void)callAPIGetImageFirstWithKeyWord {
+    //Show hud
     
+    //Initializable param
     NSMutableDictionary *params = @{}.mutableCopy;
-    params[@"searchType"] = @"image";
-    params[@"q"]= self.mTextFieldInput.text;
+    params[@"searchType"] = @"image"; //type search image
+    params[@"q"]= self.mTextFieldInput.text;  //keyword search
+    
+    //Call API Search with param
     [[SearchImageAPI sharedObject] requestWithOptions:params success:^(API *sender, id result) {
         if( [result objectForKey:@"items"] ){
+            //Array Items find out
             NSArray *arrayObj = (NSArray *)[result objectForKey:@"items"] ;
             ResultObj *obj = [[ResultObj alloc] initWithDictionary:arrayObj[0] error:nil];
-            NSLog(@"obj : %@",obj.link);
-            [self.mImageResult sd_setImageWithURL:obj.link completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-                if(image) {
-                    self.mImageResult.image = image;
-                } else {
-                    self.mImageResult.image = nil;
-                }
-            }];
+            ImageObj *imgObj = obj.image;
+            
+            //Change frame image cell
+            CGFloat widthImage = imgObj.width.floatValue;
+            CGFloat heightImage = imgObj.height.floatValue;
+            CGFloat widthOriginal = self.mImageResult.frame.size.width;
+            CGFloat newHeight =  (widthOriginal/widthImage) * heightImage;
+            self.mHeightConstraintCell.constant = newHeight;
+            
+            NSLog(@"obj : %@",imgObj.thumbnailLink);
+            NSLog(@"width Original : %f",self.mImageResult.frame.size.width);
+            
+            NSURL *url = [NSURL URLWithString:imgObj.thumbnailLink];
+            //Check url of image
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [self.mImageResult nkvSetProgressViewDataSource:self];
+                [self.mImageResult nkv_setImageWithURL:url placeholderImage:IMAGE_DEFAULT options:SDWebImageProgressiveDownload progress:nil completed:
+                 ^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                     if(image) {
+                         self.mImageResult.image = image;
+                     }
+                     if ([self.delegate respondsToSelector:@selector(updateFrameWhenChangeImageAtIndexPath:andItem:)]) {
+                         Item *item = [[Item alloc] init];
+                         item.image = self.mImageResult.image;
+                         item.textInput = self.mTextFieldInput.text;
+                         item.urlImage = imgObj.thumbnailLink;
+                         [self.delegate updateFrameWhenChangeImageAtIndexPath:self.currentIndexPath andItem:item];
+                     }
+                 } usingProgressViewType:CircularPV orCustomProgressView:nil];
+                
+            }
         }
     } failure:^(API *sender, NSError *error) {
-        [GlobalMethods showMessage:error.description];
+        NSString *message = error.localizedDescription;
+        //Error limit by google ( 100 queries/day)
+        if (error.code == CODE_ERROR_GOOGLE_API_403 ) {
+            message = NSLocalizedString(@"error_message_code_403", nil);
+        }
+        [GlobalMethods showMessage:message];
     }];
 }
 

@@ -52,11 +52,11 @@
  */
 - (void)requestWithOptions:(NSDictionary *)options success:(APISuccessBlock)success failure:(APIFailureBlock)failure {
     
-    [MBProgressHUD showHUDAddedTo:DEVICE_WINDOW animated:YES];
+//    [MBProgressHUD showHUDAddedTo:DEVICE_WINDOW animated:YES];
     
     // Check network and return if "have a warning"
     if ([GlobalMethods warningLossConnection]) {
-        [MBProgressHUD hideHUDForView:DEVICE_WINDOW animated:YES];
+//        [MBProgressHUD hideHUDForView:DEVICE_WINDOW animated:YES];
         return;
     }
     
@@ -81,18 +81,18 @@
         if(success) {
             success(self, responseObject);
         }
-        [MBProgressHUD hideHUDForView:DEVICE_WINDOW animated:YES];
+//        [MBProgressHUD hideHUDForView:DEVICE_WINDOW animated:YES];
         
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         if (failure) {
             failure(self, error);
         }
         
-        [MBProgressHUD hideHUDForView:DEVICE_WINDOW animated:YES];
+//        [MBProgressHUD hideHUDForView:DEVICE_WINDOW animated:YES];
         // Show retry alert
-        [GlobalMethods showRetryMessage:NSLocalizedString(@"ErrorAPIMessage", nil) withHandler:^(UIAlertAction *action) {
-            [self requestWithOptions:nil success:success failure:failure];
-        }];
+//        [GlobalMethods showRetryMessage:NSLocalizedString(@"ErrorAPIMessage", nil) withHandler:^(UIAlertAction *action) {
+//            [self requestWithOptions:nil success:success failure:failure];
+//        }];
     }];
 }
 

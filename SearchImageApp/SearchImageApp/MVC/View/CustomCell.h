@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
+
+@protocol CustomCellDelegate <NSObject>
+
+- (void)updateFrameWhenChangeImageAtIndexPath:(NSIndexPath *)indexPath andItem:(Item *)item;
+
+@end
 
 @interface CustomCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mHeightConstraintCell;
 
 @property (weak, nonatomic) IBOutlet UITextField *mTextFieldInput;
 @property (weak, nonatomic) IBOutlet UIImageView *mImageResult;
+
+@property (strong, nonatomic) NSIndexPath *currentIndexPath;
+
+@property (weak, nonatomic) id <CustomCellDelegate> delegate;
 @end

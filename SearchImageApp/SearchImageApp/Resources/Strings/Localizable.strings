@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  SearchImageApp
+
+  Created by DELL7447 on 9/22/17.
+  Copyright © 2017 y4gamilight. All rights reserved.
+*/
+
+
+"error_message_code_403"        =       "Your requests were limited by Google API";
