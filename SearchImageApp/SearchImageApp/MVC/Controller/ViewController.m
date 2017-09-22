@@ -8,9 +8,9 @@
 
 #import "ViewController.h"
 #import "CustomCell.h"
-#import "Item.h"
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, CustomCellDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *mTableView;
 
 @end
 
@@ -25,6 +25,7 @@
     //Set default for variables
     [self setDefaultForVariables];
     // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 
@@ -40,10 +41,11 @@
     
     for (int i = 0; i < MAX_LINES_IN_TABLE ;i++) {
         Item *item = [[Item alloc] init];
+        item.image = IMAGE_DEFAULT;
+        item.textInput = @"";
         [listInputText addObject:item];
     }
 }
-
 
 #pragma mark: - UITableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -55,12 +57,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Item *item = [[Item alloc] init];
+    Item *item = (Item *)[listInputText objectAtIndex:indexPath.row];
     
     CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"customCell"];
-    
+    cell.delegate = self;
+    cell.currentIndexPath = indexPath;
+    cell.mImageResult.image = item.image;
     cell.mTextFieldInput.text = item.textInput;
-    cell.mImageResult.image = nil;
     return cell;
 }
 
@@ -71,4 +74,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
+
+#pragma mark: - CustomCell Delegate 
+- (void)updateFrameWhenChangeImageAtIndexPath:(NSIndexPath *)indexPath andItem:(Item *)item{
+    [self.mTableView beginUpdates];
+    [self.mTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [listInputText replaceObjectAtIndex:indexPath.row withObject:item];
+    [self.mTableView endUpdates];
+}
+
 @end

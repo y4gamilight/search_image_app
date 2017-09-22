@@ -11,4 +11,10 @@
 
 #define MAX_LINES_IN_TABLE                      5
 
+#define DEVELOP                                 1
+
+
+//UIImage
+
+#define IMAGE_DEFAULT                           [UIImage imageNamed:@"img_back_background"]
 #endif /* Constants_h */
