@@ -63,7 +63,7 @@
     [AFHTTPSessionManager manager].responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     
     // Get URL
-    NSString *urlString = [URL_DOMAIN_ROOT stringByAppendingString:CUSTOM_SEARCH_WITH_KEY];
+    NSString *urlString = [URL_DOMAIN_ROOT stringByAppendingString:CUSTOM_SEARCH_WITH_KEY([AppManager share].keyGoogleAPICurrent)];
     
     // Call GET method
     [[AFHTTPSessionManager manager] GET:urlString parameters:options progress:nil success:^(NSURLSessionDataTask *operation, id responseObject) {

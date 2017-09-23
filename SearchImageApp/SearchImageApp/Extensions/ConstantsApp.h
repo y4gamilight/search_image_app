@@ -28,6 +28,7 @@
 #define DEVICE_WIDTH                                    [UIScreen mainScreen].bounds.size.width
 #define DEVICE_HEIGHT                                   [UIScreen mainScreen].bounds.size.height
 #define DISPLAY_SCALE                                   ((DEVICE_WIDTH < DEVICE_HEIGHT)?(DEVICE_WIDTH) / 320.0f:(DEVICE_HEIGHT) / 320.0f)
+#define DISPLAY_SCALE_IPAD                                   ((DEVICE_WIDTH < DEVICE_HEIGHT)?(DEVICE_WIDTH) / 768.0:(DEVICE_HEIGHT) / 768.0)
 
 #define VERSION                                         [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey]
 

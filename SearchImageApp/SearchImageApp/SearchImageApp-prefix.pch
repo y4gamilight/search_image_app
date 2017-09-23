@@ -25,5 +25,6 @@
 
 //Class header
 #import "GlobalMethods.h"
+#import "AppManager.h"
 
 #endif /* SearchImageApp_prefix_h */

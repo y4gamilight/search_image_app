@@ -11,12 +11,16 @@
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, CustomCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *mTableView;
+@property (weak, nonatomic) IBOutlet UIScrollView *mScrollView;
+@property (weak, nonatomic) IBOutlet UIView *mViewTopLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mBottomConstraintTableView;
 
 @end
 
 @implementation ViewController
 {
     NSMutableArray *listInputText;
+    CGFloat scaleDisplay;
 }
 
 - (void)viewDidLoad {
@@ -24,8 +28,17 @@
     
     //Set default for variables
     [self setDefaultForVariables];
+    [self setGestureForViews];
     // Do any additional setup after loading the view, typically from a nib.
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self addObserverForViewController];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self removeObserverForViewController];
 }
 
 
@@ -37,6 +50,8 @@
 #pragma mark: - Private method
 - (void)setDefaultForVariables {
     //Initialization array
+    scaleDisplay = IS_IPHONE ? DISPLAY_SCALE : DISPLAY_SCALE_IPAD;
+    
     listInputText = [NSMutableArray array];
     
     for (int i = 0; i < MAX_LINES_IN_TABLE ;i++) {
@@ -45,6 +60,45 @@
         item.textInput = @"";
         [listInputText addObject:item];
     }
+}
+
+- (void)setGestureForViews {
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyBoardWillBeHidden)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void) addObserverForViewController{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsShown) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardIsHidden) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardChangedFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+- (void) removeObserverForViewController {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+     
+}
+
+#pragma mark: - Selector
+- (void)keyboardIsShown {
+}
+
+- (void)keyboardIsHidden {
+    self.mBottomConstraintTableView.constant = 0;
+}
+
+- (void)keyBoardChangedFrame:(NSNotification *)notification {
+    CGSize keyboardSize =  [[[notification userInfo]
+                             objectForKey:UIKeyboardFrameEndUserInfoKey]CGRectValue].size;
+    
+    CGFloat height = MIN(keyboardSize.height,keyboardSize.width);
+    self.mBottomConstraintTableView.constant = height;
+    //
+}
+
+- (void)keyBoardWillBeHidden {
+    [self.mTableView endEditing:true];
 }
 
 #pragma mark: - UITableView Delegate
@@ -67,13 +121,14 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.mTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:true];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewAutomaticDimension;
-}
 
 #pragma mark: - CustomCell Delegate 
 - (void)updateFrameWhenChangeImageAtIndexPath:(NSIndexPath *)indexPath andItem:(Item *)item{

@@ -20,5 +20,6 @@
 #pragma mark - API Support Methods
 + (BOOL)isConnectionAvailable;
 + (BOOL)warningLossConnection;
-
++ (BOOL) isEnableKeyGoogleAPI;
++(void)resetStatusKeyGoogleAPI;
 @end

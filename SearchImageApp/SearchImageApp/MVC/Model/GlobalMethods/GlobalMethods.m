@@ -101,4 +101,23 @@
     return NO;
 }
 
++(BOOL) isEnableKeyGoogleAPI {
+    
+    NSLog(@"***Global Method ****");
+    NSLog(@"isEnableKeyGoogleAPI %ld",[AppManager share].numberkeyGoogleAPIChecked);
+    if ([AppManager share].numberkeyGoogleAPIChecked > [AppManager share].arrayKeyGoogleAPI.count - 1) {
+        return false;
+    }
+    
+    [AppManager share].keyGoogleAPICurrent = [AppManager share].arrayKeyGoogleAPI[[AppManager share].numberkeyGoogleAPIChecked];
+    [AppManager share].numberkeyGoogleAPIChecked ++;
+    return true;
+}
+
++(void)resetStatusKeyGoogleAPI {
+    NSLog(@"***Global Method ****");
+    NSLog(@"reset status key API");
+    NSLog(@"*********************");
+    [AppManager share].numberkeyGoogleAPIChecked  = 0;
+}
 @end

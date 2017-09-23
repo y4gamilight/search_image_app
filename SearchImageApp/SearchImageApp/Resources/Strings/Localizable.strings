@@ -8,3 +8,4 @@
 
 
 "error_message_code_403"        =       "Your requests were limited by Google API";
+"error_message_no_found"        =       "Google can't search api with key %@";

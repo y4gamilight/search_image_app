@@ -14,6 +14,8 @@
 #define GOOGLE_KEY_API_ENABLE           @"AIzaSyAUITrcUhziu7i1UCRWgRs3qPrzQ6YzLTI"
 #define GOOGLE_KEY_API_ENABLE_2         @"AIzaSyDoAL4vsuPaztbrwxnCqd2nuAeu7JIt27A"
 #define GOOGLE_KEY_API_ENABLE_3         @"AIzaSyCB0qtIJANi6F_aKFQpOlb-e_02BqgXSLU"
+#define GOOGLE_KEY_API_ENABLE_4         @"AIzaSyAYRIdEjEFl3z56udhBr_B8EkvqCiAxS18"
+#define GOOGLE_KEY_API_ENABLE_5         @"AIzaSyBxw4v-NqE5XQCB_VDvcUoGPTLmoESaTDU"
 
 
 #define CX_USER                         @"003139732808011379870:7kfj3kj2cp8"
@@ -22,7 +24,7 @@
 
 //API
 #define CUSTOM_SEARCH               @"customsearch/v1?key=%@&cx=%@"
-#define CUSTOM_SEARCH_WITH_KEY      [NSString stringWithFormat:CUSTOM_SEARCH,GOOGLE_KEY_API_ENABLE_3,CX_USER]
+#define CUSTOM_SEARCH_WITH_KEY(key)      [NSString stringWithFormat:CUSTOM_SEARCH,key,CX_USER]
 
 #endif
 

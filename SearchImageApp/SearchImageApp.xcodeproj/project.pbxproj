@@ -21,6 +21,7 @@
 		B00FA40E1F72BB7B003BEA95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B00FA40C1F72BB7B003BEA95 /* LaunchScreen.storyboard */; };
 		B00FA41B1F72BDB7003BEA95 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA4181F72BDB7003BEA95 /* ViewController.m */; };
 		B00FA41E1F72BE03003BEA95 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B00FA41D1F72BE03003BEA95 /* CustomCell.m */; };
+		B016C3BD1F76905100D5F5FE /* AppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B016C3BC1F76905100D5F5FE /* AppManager.m */; };
 		B020DA381F740EA0001C59CE /* SearchImageAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = B020DA371F740EA0001C59CE /* SearchImageAPI.m */; };
 		B020DA3B1F741844001C59CE /* ImageObj.m in Sources */ = {isa = PBXBuildFile; fileRef = B020DA3A1F741844001C59CE /* ImageObj.m */; };
 		B020DA3E1F741C28001C59CE /* ResultObj.m in Sources */ = {isa = PBXBuildFile; fileRef = B020DA3D1F741C28001C59CE /* ResultObj.m */; };
@@ -58,6 +59,8 @@
 		B00FA41D1F72BE03003BEA95 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		B00FA4231F72CDB0003BEA95 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		B00FA4241F72CDE9003BEA95 /* SearchImageApp-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SearchImageApp-prefix.pch"; sourceTree = "<group>"; };
+		B016C3BB1F76905100D5F5FE /* AppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppManager.h; sourceTree = "<group>"; };
+		B016C3BC1F76905100D5F5FE /* AppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppManager.m; sourceTree = "<group>"; };
 		B020DA361F740EA0001C59CE /* SearchImageAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchImageAPI.h; sourceTree = "<group>"; };
 		B020DA371F740EA0001C59CE /* SearchImageAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchImageAPI.m; sourceTree = "<group>"; };
 		B020DA391F741844001C59CE /* ImageObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageObj.h; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 			children = (
 				B00420D01F73DD2F0016FCB1 /* GlobalMethods.h */,
 				B00420D11F73DD2F0016FCB1 /* GlobalMethods.m */,
+				B016C3BB1F76905100D5F5FE /* AppManager.h */,
+				B016C3BC1F76905100D5F5FE /* AppManager.m */,
 			);
 			path = GlobalMethods;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				B00420CE1F73D7240016FCB1 /* CheckNetwork.m in Sources */,
 				B00FA4001F72BB7B003BEA95 /* main.m in Sources */,
 				B00420D21F73DD2F0016FCB1 /* GlobalMethods.m in Sources */,
+				B016C3BD1F76905100D5F5FE /* AppManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
