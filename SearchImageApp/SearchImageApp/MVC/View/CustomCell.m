@@ -54,6 +54,15 @@
     [self.mTextFieldInput addTarget:self action:@selector(editingChangedOnTextField:) forControlEvents:UIControlEventEditingChanged];
 }
 
+#pragma mark: - Update Data
+- (void)updateCellWithItem:(Item *)item andIndexPath:(NSIndexPath *)indexPath {
+    
+    self.currentIndexPath = indexPath;
+    self.mImageResult.image = item.image;
+    self.mTextFieldInput.text = item.textInput;
+    self.mHeightConstraintCell.constant = item.heightImage;
+}
+
 #pragma mark: - Selector method
 
 - (void)resignTextField:(id)sender {
@@ -198,7 +207,9 @@
         item.image = self.mImageResult.image;
         item.textInput = self.mTextFieldInput.text;
         item.urlImage = url;
+        item.heightImage = self.mHeightConstraintCell.constant;
         [self.delegate updateFrameWhenChangeImageAtIndexPath:self.currentIndexPath andItem:item];
+        [self.mTextFieldInput becomeFirstResponder];
     }
 }
 @end

@@ -58,6 +58,7 @@
         Item *item = [[Item alloc] init];
         item.image = IMAGE_DEFAULT;
         item.textInput = @"";
+        item.heightImage = 140 * scaleDisplay;
         [listInputText addObject:item];
     }
 }
@@ -115,9 +116,7 @@
     
     CustomCell *cell = (CustomCell *)[tableView dequeueReusableCellWithIdentifier:@"customCell"];
     cell.delegate = self;
-    cell.currentIndexPath = indexPath;
-    cell.mImageResult.image = item.image;
-    cell.mTextFieldInput.text = item.textInput;
+    [cell updateCellWithItem:item andIndexPath:indexPath];
     return cell;
 }
 

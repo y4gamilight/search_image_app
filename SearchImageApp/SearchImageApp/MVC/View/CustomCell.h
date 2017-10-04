@@ -24,4 +24,6 @@
 @property (strong, nonatomic) NSIndexPath *currentIndexPath;
 
 @property (weak, nonatomic) id <CustomCellDelegate> delegate;
+
+- (void)updateCellWithItem:(Item *)item andIndexPath:(NSIndexPath *)indexPath;
 @end
